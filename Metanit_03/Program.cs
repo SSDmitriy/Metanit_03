@@ -3,5 +3,5 @@ Console.WriteLine("Hello, World!");
 string firstname = "Имя";
 string lastname = "фамилия";
 string cons = Console.ReadLine();
-Console.WriteLine(firstname + lastname + cons);  
+Console.WriteLine(firstname + " " + lastname + " " + cons);  
 
