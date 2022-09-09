@@ -7,6 +7,3 @@ Console.WriteLine(firstname + " " + lastname + " " + cons);
 
 //add one more line
 Console.WriteLine("commit two");
-
-
-// third commit
