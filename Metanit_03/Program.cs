@@ -21,3 +21,4 @@ Console.WriteLine($"Грав.постоянная: {G}");
 
 //продолжаю на ветке first
 Console.WriteLine("На ветке first");
+//продолжаю на ветке f
