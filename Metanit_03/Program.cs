@@ -17,3 +17,7 @@ Console.WriteLine($"Возраст: {age}");
 Console.WriteLine($"расстояние: {distanse}");
 Console.WriteLine($"Плотность: {density}");
 Console.WriteLine($"Грав.постоянная: {G}");
+
+
+//продолжаю на ветке first
+Console.WriteLine("На ветке first");
