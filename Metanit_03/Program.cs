@@ -13,6 +13,8 @@ ulong distanse = 3;
 float density = 2.7f;
 double G = 0.0000000000667;
 
+//пятый комит в мастер
+
 Console.WriteLine($"Возраст: {age}");
 Console.WriteLine($"расстояние: {distanse}");
 Console.WriteLine($"Плотность: {density}");
