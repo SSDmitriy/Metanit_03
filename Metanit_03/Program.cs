@@ -1,28 +1,25 @@
-﻿// See https://aka.ms/new-console-template for more information
-Console.WriteLine("Hello, World!");
-string firstname = "Имечко";
-string lastname = "Фамилия";
-string cons = Console.ReadLine();
-Console.WriteLine(firstname + " \t" + lastname + "\n" + cons);
+﻿string hello = "hell";
+var Hello = "Hello";
 
-//add one more line
-Console.WriteLine("commit two");
+string? firstName;
+Console.WriteLine("Imya");
+firstName = Console.ReadLine();
 
-int age = 33;
-ulong distanse = 3;
-float density = 2.7f;
-double G = 0.0000000000667;
+Console.WriteLine("Vozrast");
 
-//пятый комит в мастер
-
-Console.WriteLine($"Возраст: {age}");
-Console.WriteLine($"расстояние: {distanse}");
-Console.WriteLine($"Плотность: {density}");
-Console.WriteLine($"Грав.постоянная: {G}");
+double age = Convert.ToDouble(Console.ReadLine());
 
 
-//продолжаю на ветке first
-Console.WriteLine("На ветке first");
-//продолжаю на ветке f
+Console.Write($"Familiya: , Imya: {firstName}, Otchestvo:, Age: {age}");
+Console.WriteLine();
+double a = 10;
+double b = 3;
+double c = a / b;
+Console.WriteLine($"a = {a}");
+Console.WriteLine($"b = {b}");
 
-//зарезолвил конфликт
+Console.WriteLine("C = a / b = {0}", c);
+
+
+
+
