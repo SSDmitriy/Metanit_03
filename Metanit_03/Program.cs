@@ -52,6 +52,36 @@ Console.WriteLine("42 расшифровано: " + (decrypt));
 int y = 14;
 Console.WriteLine("Инвертированный Х = " + y + " = " + (~y));
 
+//присваивание со сдвигом разрядов
+int x2 = 4;
+Console.WriteLine($"x2 = {x2}. Сдвинуть на 4 разряда влево: X2 << 4 = {x2 << 2}");
+
+byte a = 4;
+byte b = (byte)(a + 1);
+
+//явное приведение
+double d3 = 14.0;
+decimal dc3 = (decimal)d3;
+Console.WriteLine("Decimal dc3 = {0}", dc3);
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
