@@ -1,0 +1,8 @@
+{
+  "profiles": {
+    "Metanit_03": {
+      "commandName": "Project",
+      "nativeDebugging": true
+    }
+  }
+}
