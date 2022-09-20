@@ -1,28 +1,60 @@
-﻿// See https://aka.ms/new-console-template for more information
-Console.WriteLine("Hello, World!");
-string firstname = "Имечко";
-string lastname = "Фамилия";
-string cons = Console.ReadLine();
-Console.WriteLine(firstname + " \t" + lastname + "\n" + cons);
+﻿//string hello = "hell";
+//var Hello = "Hello";
 
-//add one more line
-Console.WriteLine("commit two");
+//string? firstName;
+//Console.WriteLine("Imya");
+//firstName = Console.ReadLine();
 
-int age = 33;
-ulong distanse = 3;
-float density = 2.7f;
-double G = 0.0000000000667;
+//Console.WriteLine("Vozrast");
 
-//пятый комит в мастер
-
-Console.WriteLine($"Возраст: {age}");
-Console.WriteLine($"расстояние: {distanse}");
-Console.WriteLine($"Плотность: {density}");
-Console.WriteLine($"Грав.постоянная: {G}");
+//double age = Convert.ToDouble(Console.ReadLine());
 
 
-//продолжаю на ветке first
-Console.WriteLine("На ветке first");
-//продолжаю на ветке f
+//Console.Write($"Familiya: , Imya: {firstName}, Otchestvo:, Age: {age}");
+//Console.WriteLine();
+//double a = 10;
+//double b = 3;
+//double c = a / b;
+//Console.WriteLine($"a = {a}");
+//Console.WriteLine($"b = {b}");
 
-//зарезолвил конфликт
+//Console.WriteLine("C = a / b = {0}", c);
+
+
+//если в качестве операндов указать литералы (не переменные), то результат может быть целым
+double z = 10 / 3;
+
+//или дробным (если указал вещественные литералы
+double zz = 10.0 / 3.0;
+Console.WriteLine("z = " + z + ";  zz " + zz);
+
+
+Console.WriteLine("остаток от деления 10/3 = " + 10 % 3);
+
+
+//логическое умножение & : 1011 & 1110 = 1010 = "10"
+Console.WriteLine("11 & 14 = " + (11 & 14));
+
+//логическое сложение | : 1010 & 1100 = 1110 = "10"
+Console.WriteLine("10 | 12 = " + (10 | 12));
+
+//исключающее или
+int x = 42;
+int key = 777;
+
+int encrypt = x ^ key;
+Console.WriteLine("42 зашифровано: " + (encrypt)); // 10 1010 + 11 0000 1001 = 00 1101 1011
+
+int decrypt = encrypt ^ key;
+Console.WriteLine("42 расшифровано: " + (decrypt));
+
+//инвертирование разрядов ~
+int y = 14;
+Console.WriteLine("Инвертированный Х = " + y + " = " + (~y));
+
+
+
+
+
+
+
