@@ -153,13 +153,13 @@ Console.WriteLine(nums[^2]);
 //метод для вывода русского приветствия
 void PrintHelloRu(string name)
 {
-    Console.WriteLine("Привет Ру метод " + name);
+    Console.WriteLine("Привет метод (русск) " + name);
 }
 
 //метод для вывода En приветствия
 void PrintHelloEn(string name)
 {
-    Console.WriteLine("Hello Yellow " + name);
+    Console.WriteLine("Hello Yellow (english)" + name);
 }
 
 Console.WriteLine("Your name is... ");
@@ -183,7 +183,19 @@ while (true)
 Console.WriteLine($"Вы ввели имя: {name} и язык метода {langChoice}.");
 
 if (langChoice == "Ru") PrintHelloRu(name); 
-if (langChoice == "En") PrintHelloEn(name); 
+if (langChoice == "En") PrintHelloEn(name);
+
+Console.WriteLine("Ещё раз через switch...");
+switch (langChoice)
+{
+    case "En":
+        PrintHelloEn(name);
+        break;
+    case "Ru":
+        PrintHelloRu(name);
+        break;
+}
+
 
 
 
