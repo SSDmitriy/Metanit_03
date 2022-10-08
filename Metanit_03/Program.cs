@@ -22,6 +22,8 @@
 
 
 //если в качестве операндов указать литералы (не переменные), то результат может быть целым
+using System.Data.SqlTypes;
+
 double z = 10 / 3;
 
 //или дробным (если указал вещественные литералы
@@ -101,9 +103,7 @@ Console.WriteLine("Циклы");
 int a, b;
 a = b = 1;
 for (; a < 11; a++)
-{
-
-   
+{   
     for (; b < 11; b++)
     {
         Console.Write((a * b) + ", ");
@@ -150,7 +150,40 @@ Console.WriteLine(nums[^1]);
 Console.WriteLine(nums[^2]);
 
 
+//метод для вывода русского приветствия
+void PrintHelloRu(string name)
+{
+    Console.WriteLine("Привет Ру метод " + name);
+}
 
+//метод для вывода En приветствия
+void PrintHelloEn(string name)
+{
+    Console.WriteLine("Hello Yellow " + name);
+}
+
+Console.WriteLine("Your name is... ");
+string name = Console.ReadLine();
+
+Console.WriteLine("Выберете Ru / En");
+string langChoice = "";
+
+while (true)
+{
+    langChoice = Console.ReadLine();
+    if(langChoice == "En" || langChoice == "Ru")
+    {
+        break;
+    } else {
+        Console.WriteLine("Wrong choice. Try again...");
+        continue;
+    };
+}
+
+Console.WriteLine($"Вы ввели имя: {name} и язык метода {langChoice}.");
+
+if (langChoice == "Ru") PrintHelloRu(name); 
+if (langChoice == "En") PrintHelloEn(name); 
 
 
 
