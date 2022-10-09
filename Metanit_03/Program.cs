@@ -22,6 +22,8 @@
 
 
 //если в качестве операндов указать литералы (не переменные), то результат может быть целым
+
+/*
 using System.Data.SqlTypes;
 
 double z = 10 / 3;
@@ -32,6 +34,8 @@ Console.WriteLine("z = " + z + ";  zz " + zz);
 
 
 Console.WriteLine("остаток от деления 10/3 = " + 10 % 3);
+
+*/
 
 /*
 //логическое умножение & : 1011 & 1110 = 1010 = "10"
@@ -188,7 +192,9 @@ switch (langChoice)
 Console.WriteLine();
 */
 
-//метод с параметров
+/*
+
+//метод с передачей параметров
 void PrintMessage(string message)
 {
     Console.WriteLine("I print this: " + message);
@@ -234,29 +240,104 @@ Console.WriteLine();
 Console.WriteLine("Тот же вывод, но с передачей параметров по имени, а не по позиции");
 UnnessecairyParams(42, s: 5, b: "InsteadDefault");
 
+//метод с возвращаемым значением (не void)
+int GetSum(int num1, int num2)
+{
+    int result = num1 + num2;
+    return result;
+}
+
+Console.WriteLine("sum for two nums: " + GetSum(5, 3));
+*/
+
+// передача в метод параметров по ссылку https://metanit.com/sharp/tutorial/2.27.php
+// если передавать параметр по занчению (обычным способом)
+// то в метод передаетсяс КОПИЯ переменной
+// и изменений переменной вне метода нет
+// Чтобы передать по ссылке нужно использовать перед параметром ref
+// тогда внутри метода переменная будет изменена
+void Increment(int num)
+{
+    num++;
+    Console.WriteLine("Переменная внутри метода (передана ПО ЗНАЧЕНИЮ): " + num);
+}
+
+int num = 5;
+Console.WriteLine($"1. Исходное значение переменной num = {num}");
+Console.Write("2. Вызов метода Increment()");
+Increment(num);
+Console.WriteLine($"3. Значение переменной после метода Increment (не изменится) num = {num}");
+Console.WriteLine();
+
+// передача переменной по ссылке
+// ref надо писать и в ОПРЕДЕЛЕНИИ метода и при ВЫЗОВЕ
+void IncrementByRef(ref int num)
+{
+    num++;
+    Console.WriteLine("Переменная внутри метода (передана ПО ЗНАЧЕНИЮ): " + num);
+}
+
+num = 5;
+Console.WriteLine($"1. Исходное значение переменной num = {num}");
+Console.Write("2. Вызов метода IncrementByRef()");
+IncrementByRef(ref num);
+Console.WriteLine($"3. Значение переменной после метода IncrementByRef (было изменено методом) num = {num}");
+Console.WriteLine();
+
+// выходные параметры - модификатор out
+// это вместо return
+void GetSumResult(int a, int b, out int result)
+{
+    Console.WriteLine("Внутри метода GetSumResultп ереданы числа a, b: " + a + ", " + b);
+    result = a + b;
+}
+int a = 2;
+int b = 3;
+int sum;
+//int sum = GetSumResult(a, b, out sum); - так нельзя, потому что метод void и не возвращает значения
+GetSumResult(a, b, out sum);
+Console.WriteLine("Сумма, возвращенная в методе через out: " + sum);
+Console.WriteLine();
 
 
+// через out можно вернуть из метода НЕСКОЛЬКО значений (return возвращает только одно)
+// а модификатор in - передает в метод переменную, которую НЕЛЬЗЯ ИЗМЕНИТЬ внутри метода
+// метод возвращает ДВА значения (периметр и площадь прямоугольника
+void GetRectangleData(in int lenght, in int width, out int rectPerimetr, out int rectArea)
+{
+    Console.WriteLine($"Внутри метода GetRectangleData. На вход подали длину {lenght} и ширину {width}");
+    rectPerimetr = (lenght + width) * 2;
+    rectArea = lenght * width;
 
+}
 
+a = 4; b = 5;
+Console.WriteLine($"Передаю на вход длину {a} и ширину {b}");
 
+GetRectangleData(4, 5, out int Perimetr, out int Area);
+Console.WriteLine("Периметр: " + Perimetr + " Площадь: " + Area);
+Console.WriteLine();
 
+// передача НЕОПРЕДЕЛЕННОГО количества параметров с модификатором params
+// сначала в метод передаются все известные параметры, потом неопределенное количество
+// после params нельзя опять передавать известные параметры
+// метод принимающий имя, фамилию и ОПЦИОНАЛЬНО отчество и eMail
+void PrintPersData(string name, string lastname, params string[] other)
+{
+    Console.WriteLine("Внутри метода PrintPersData");
+    Console.Write("Имя: " + name + ". Фамилия: " + lastname + ".");
+    if (other.Length > 0) Console.Write("  Отчество: " + other[0]);
+    if (other.Length > 1) Console.Write("  Email1: " + other[1]);
+    if (other.Length > 2) Console.Write("  Email2: " + other[2]);
+}
 
+// вызов с отчеством и одним имэйл
+PrintPersData("Иван", "Медведев", "Николаевич", "mail1@ya.ru");
+// вызовв без доп параметров
+PrintPersData("Петя", "Иванов");
+// вызовв с пятью
+PrintPersData("Гриша", "Дармоедов", "Батькович", "мыло1", "мыло2");
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+Console.WriteLine();
 
 
