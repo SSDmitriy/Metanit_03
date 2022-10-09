@@ -168,17 +168,6 @@ string name = Console.ReadLine();
 Console.WriteLine("Выберете Ru / En");
 string langChoice = "";
 
-while (true)
-{
-    langChoice = Console.ReadLine();
-    if(langChoice == "En" || langChoice == "Ru")
-    {
-        break;
-    } else {
-        Console.WriteLine("Wrong choice. Try again...");
-        continue;
-    };
-}
 
 Console.WriteLine($"Вы ввели имя: {name} и язык метода {langChoice}.");
 
