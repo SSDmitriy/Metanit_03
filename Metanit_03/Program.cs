@@ -33,7 +33,7 @@ Console.WriteLine("z = " + z + ";  zz " + zz);
 
 Console.WriteLine("остаток от деления 10/3 = " + 10 % 3);
 
-
+/*
 //логическое умножение & : 1011 & 1110 = 1010 = "10"
 Console.WriteLine("11 & 14 = " + (11 & 14));
 
@@ -184,6 +184,62 @@ switch (langChoice)
         PrintHelloRu(name);
         break;
 }
+
+Console.WriteLine();
+*/
+
+//метод с параметров
+void PrintMessage(string message)
+{
+    Console.WriteLine("I print this: " + message);
+}
+
+PrintMessage("weroijo");
+PrintMessage("234234");
+
+//метод с двумя параметрами
+void MethSum(int num1, int num2)
+{
+    Console.WriteLine("This method wil print sum of two numbers");
+    int result = num1 + num2;
+    Console.WriteLine($"num1 ({num1}) + num2({num2}) = {result}");
+}
+//call method
+MethSum(5, 3);
+MethSum(5, 3*5);
+
+//разные типы параметров в методе
+void PrintTwo(string a, int b)
+{
+    Console.WriteLine(a + b);
+}
+int b = 203;
+Console.WriteLine();
+Console.WriteLine("Вызов метода с двумя параметрами разных типов");
+PrintTwo("cстрока", b);
+
+
+//метод с НЕОБЯЗАТЕЛЬНЫМИ параметрами
+//если в определении метода задаешь дефолтное значение,
+//то можно и не передавать эти параметры
+void UnnessecairyParams(int g, string b = "defaulT string", byte s = 127)
+{
+    Console.WriteLine($"В метод передается три параметра: g = {g}, b = {b}, c = {s}");
+}
+Console.WriteLine();
+Console.WriteLine("Вызов метода с Тремя параметрами, два из которых необязательные (имеют дефолт)");
+UnnessecairyParams(132, "iujl");
+
+Console.WriteLine();
+Console.WriteLine("Тот же вывод, но с передачей параметров по имени, а не по позиции");
+UnnessecairyParams(42, s: 5, b: "insteadDefault");
+
+
+
+
+
+
+
 
 
 
