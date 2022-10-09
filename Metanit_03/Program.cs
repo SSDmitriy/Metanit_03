@@ -232,7 +232,7 @@ UnnessecairyParams(132, "iujl");
 
 Console.WriteLine();
 Console.WriteLine("Тот же вывод, но с передачей параметров по имени, а не по позиции");
-UnnessecairyParams(42, s: 5, b: "insteadDefault");
+UnnessecairyParams(42, s: 5, b: "InsteadDefault");
 
 
 
