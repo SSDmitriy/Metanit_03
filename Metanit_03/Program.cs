@@ -344,7 +344,7 @@ Console.WriteLine();
 */
 
 // локальные функции https://metanit.com/sharp/tutorial/2.20.php
-///*
+/*
 //метод с ЛОКАЛЬНОЙ ФУНКЦИЕЙ внутри, сравнивающей суммы чисел двух массивов
 void CompareSums(int[] array1, int[] array2, out int result)
 {
@@ -415,6 +415,51 @@ int[] array2 = { -2, -3, -4, 0, 2, -5 };
 SumOfPositives(array1, array2, out int sm1, out int sm2);
 Console.WriteLine("sm1, sm2 : " + sm1 + " " + sm2);
 Console.WriteLine();
+
+
+*/
+
+
+///*
+// оператор SWITCH https://metanit.com/sharp/tutorial/3.45.php
+Console.WriteLine("Введите число, а я определю его знак");
+int num = Convert.ToInt32(Console.ReadLine());
+Console.WriteLine("Вы ввели число: " + num);
+
+//int znak = (num >= 0) ? 1 : -1;  
+
+switch (num)
+{
+    case >= 0 :
+        Console.WriteLine("Число положительное");
+        break;
+
+    case < 0:
+        Console.WriteLine("Число отрицательное");
+        break;
+}
+
+
+Console.WriteLine("Введите 2 числа: ");
+int a = Convert.ToInt32(Console.ReadLine());
+int b = Convert.ToInt32(Console.ReadLine());
+Console.WriteLine("Выберите действие: 1 - сложить, 2 - вычесть, 3 - умножить");
+int action = Convert.ToInt32(Console.ReadLine());
+Console.WriteLine($"Вы ввели числа {a} и {b}. Действие над числами {action}");
+
+// метод со switch
+int DoOperation(int a, int b, int operation)
+{
+    switch (operation)
+    {
+        case 1: return a + b;
+        case 2: return a - b;
+        case 3: return a * b;
+            default: return 0;
+    }
+}
+
+Console.WriteLine("Результат: " + DoOperation(a, b, action));
 
 
 //*/
