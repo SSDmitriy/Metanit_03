@@ -420,7 +420,7 @@ Console.WriteLine();
 */
 
 
-///*
+/*
 // оператор SWITCH https://metanit.com/sharp/tutorial/3.45.php
 Console.WriteLine("Введите число, а я определю его знак");
 int num = Convert.ToInt32(Console.ReadLine());
@@ -460,6 +460,94 @@ int DoOperation(int a, int b, int operation)
 }
 
 Console.WriteLine("Результат: " + DoOperation(a, b, action));
+
+
+*/
+
+// перечисления enum https://metanit.com/sharp/tutorial/2.12.php
+///*
+const DayTime dayTi = DayTime.Morning;
+
+
+if (dayTi == DayTime.Morning)
+{
+    Console.WriteLine("Доброе утро");
+}
+else if (dayTi == DayTime.Evening)
+{
+    Console.WriteLine("Добрый вечер");
+}
+
+DayTime now = DayTime.Afternoon;
+
+PrintMessage(now);
+PrintMessage(DayTime.Evening);
+PrintMessage(DayTime.Morning);
+
+void PrintMessage(DayTime dayTime)
+{
+    switch (dayTime)
+    {
+        case DayTime.Morning:
+            Console.WriteLine("Доброе утро!");
+            break;
+
+        case DayTime.Evening:
+            Console.WriteLine("Добрый вечер");
+            break;
+
+        case DayTime.Night:
+            Console.WriteLine("Доброй ночи");
+            break;
+
+        case DayTime.Afternoon:
+            Console.WriteLine("Добрый день");
+            break;
+    }
+}
+
+
+
+//пример switch с арефмитическими операциями
+//метод выполняющий операцию из перечисления Operation
+void DoOperation(int a, int b, Operation op)
+{
+    //перерменная с результатом
+    double result;
+
+    result = op switch
+    {
+        Operation.Add => a + b,
+        Operation.Substract => a - b,
+        Operation.Multiply => a * b,
+        Operation.Divide => a / b
+    };
+
+    //напечатать результат
+    Console.WriteLine("Результат равен: " + result);
+}
+
+DoOperation(2, 3, Operation.Add);
+DoOperation(3, 4, Operation.Substract);
+DoOperation(5, 5, Operation.Multiply);
+DoOperation(10, 3, Operation.Divide);
+
+enum Operation
+{
+    Add,
+    Substract,
+    Multiply,
+    Divide
+}
+
+enum DayTime
+{
+    Morning,
+    Evening,
+    Afternoon,
+    Night
+}
+
 
 
 //*/
